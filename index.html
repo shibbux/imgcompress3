@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Image Compressor Online - Compress & Resize Photos Instantly</title>
+  <meta name="description" content="Compress images online with our free, fast, and easy-to-use image compressor. Reduce image size, resize photos, apply filters, and download in bulk. No signup required. Works on all devices." />
+  <meta name="keywords" content="image compressor online, compress images, resize photos, image compression tool, online image editor, free image compressor" />
+  <meta name="author" content="JioAI Cloud" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://imagecompressor.rf.gd/" />
+  
+  <!-- hreflang for International SEO -->
+  <link rel="alternate" hreflang="en" href="https://imagecompressor.rf.gd/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://imagecompressor.rf.gd/" />
+  <meta property="og:title" content="Free Image Compressor Online - Compress & Resize Photos Instantly" />
+  <meta property="og:description" content="Compress images online with our free, fast, and easy-to-use image compressor. Reduce image size, resize photos, apply filters, and download in bulk." />
+  <meta property="og:image" content="https://imagecompressor.rf.gd/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Image Compressor" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://imagecompressor.rf.gd/" />
+  <meta name="twitter:title" content="Free Image Compressor Online - Compress & Resize Photos Instantly" />
+  <meta name="twitter:description" content="Compress images online with our free, fast, and easy-to-use image compressor. Reduce image size, resize photos, apply filters, and download in bulk." />
+  <meta name="twitter:image" content="https://imagecompressor.rf.gd/og-image.jpg" />
+  
+  <!-- Favicon & Apple Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon-new.svg" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  
+  <!-- Browser Config -->
+  <meta name="msapplication-config" content="browserconfig.xml" />
+  <meta name="theme-color" content="#7c3aed" />
+  
+  <!-- JSON-LD Structured Data - SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "SoftwareApplication",
+    "name": "Image Compressor",
+    "description": "Free online image compressor tool to reduce image size, resize photos, apply filters, and download in bulk.",
+    "url": "https://imagecompressor.rf.gd/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "150"
+    },
+    "image": "https://imagecompressor.rf.gd/og-image.jpg"
+  }
+  </script>
+  
+  <!-- JSON-LD Structured Data - Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Image Compressor",
+    "url": "https://imagecompressor.rf.gd/",
+    "logo": "https://imagecompressor.rf.gd/logo.png",
+    "description": "Free online image compressor and editor tool"
+  }
+  </script>
+  
+  <!-- JSON-LD Structured Data - FAQPage Schema for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Image Compressor really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Image Compressor is completely free to use. No signup required, no hidden costs, and no ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Image Compressor upload my images to servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All image processing happens entirely in your browser. Your images never leave your device and are not uploaded to any servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats does Image Compressor support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Image Compressor supports JPEG, PNG, WebP, and GIF formats. You can compress and convert images between these formats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Image Compressor on my phone or tablet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Image Compressor is fully responsive and works on all devices including phones, tablets, and computers. It works in any modern web browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I compress my images?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compression depends on your image content and quality settings. Most images can be reduced by 50-80% while maintaining acceptable quality. You can always preview before downloading."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+    @media (max-width: 269px) {
+  .max-w-5xl {
+    height: 100vh;
+  }
+}
+
+    html, body {
+      height: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #312e81 0%, #6d28d9 100%);
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .main-wrapper {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 0;
+      min-width: 0;
+    }
+    .max-w-5xl {
+      width: 100%;
+      max-width: 48rem;
+    }
+    .bg-gray-800 {
+      background-color: #1f2937;
+    }
+    .p-6 {
+      padding: 1.5rem;
+    }
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+    .shadow-2xl {
+      box-shadow: 0 10px 40px 0 #00000040;
+    }
+    img { max-height: 200px; border-radius: 10px; }
+    .drop-zone { border: 4px dashed #7c3aed; padding: 40px; border-radius: 18px; cursor: pointer; text-align: center; font-size: 1.1rem; color: #d1d5db; background: linear-gradient(to right, #2e1065, #4c1d95); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; animation: subtlePulse 3s infinite; 
+    height: 26vw;
+    align-items: center;
+    justify-content: center;
+    display: flex
+;
+    }
+    .drop-zone:hover { transform: scale(1.02); box-shadow: 0 0 20px #a78bfa; }
+    .drop-zone.dragover { background-color: #4c1d95; border-color: #c084fc; animation: none; }
+    @keyframes subtlePulse { 0%, 100% { box-shadow: 0 0 10px #7c3aed; } 50% { box-shadow: 0 0 30px #a78bfa; } }
+    .file-btn { background-color: #9333ea; color: white; padding: 0.5rem 2rem; border-radius: 10px; cursor: pointer; }
+    .file-btn:hover { background-color: #a855f7; }
+    input[type="file"] { display: none; }
+    .fancy-btn { background: linear-gradient(90deg, #7c3aed, #a855f7); box-shadow: 0 0 20px #9333ea; transition: all 0.3s; }
+    .fancy-btn:hover { background: linear-gradient(90deg, #a855f7, #9333ea); box-shadow: 0 0 30px #c084fc; transform: scale(1.05); }
+    .preview-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .preview-label { text-align: center; font-size: 0.9rem; color: #a78bfa; margin-bottom: 0.5rem; }
+    .filter-btn { background: #4c1d95; color: white; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 1px solid #7c3aed; }
+    .filter-btn:hover { background: #7c3aed; transform: translateY(-2px); }
+    .filter-btn.active { background: #7c3aed; box-shadow: 0 0 10px #a78bfa; }
+    .filter-container { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin: 1rem 0; }
+    .filter-instruction { text-align: center; font-size: 0.9rem; color: #a78bfa; margin-bottom: 0.5rem; }
+    .filter-slider-container { display: flex; align-items: center; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
+    .filter-slider-label { color: #a78bfa; font-size: 0.95rem; min-width: 90px; text-align: right; }
+    .filter-slider-value { color: #c084fc; font-weight: bold; min-width: 40px; text-align: left; }
+    .bulk-list { color: #a78bfa; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .max-w-5xl { max-width: 100%; }
+      .preview-container { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .main-wrapper { padding: 0.5rem; }
+      .p-6 { padding: 1rem; }
+      .preview-container { grid-template-columns: 1fr; }
+      .drop-zone { padding: 20px; font-size: 1rem; }
+    }
+    /* Remove extra space below the black box */
+    .signature-container {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-align: right;
+      width: 100%;
+    }
+    @media (max-width: 640px) {
+      .signature-container {
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
+    /* Prevent extra space below main content */
+    .main-wrapper > .max-w-5xl {
+      margin-bottom: 0;
+    }
+    .blackbox {
+      height: 100%;
+      width: 100vw;
+    }
+    .main-heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 24px;
+  animation: pulse 2s infinite;
+  padding: 0 1rem;
+}
+
+/* Responsive font sizes */
+@media (min-width: 640px) {
+  .main-heading {
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  .main-heading {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .main-heading {
+    font-size: 48px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Loading / Decorative Overlay (non-blocking for logic) -->
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true">
+    <div class="loading-card" role="status" aria-live="polite">
+      <div class="loading-title">Preparing your images</div>
+      <div class="loading-sub">Optimizing & compressing — this is fast and safe.</div>
+      <div class="progress-wrapper" aria-hidden="true">
+        <div id="progressBar" class="progress-bar" style="width:0%"></div>
+      </div>
+      <div id="loadingMsg" class="loading-msg">Compressing images...</div>
+    </div>
+  </div>
+    
+<div class="main-wrapper">
+  <div class="blackbox max bg-gray-800 p-6 rounded-2xl shadow-2xl">
+  <div class="w-full flex justify-start mb-4">
+    <button 
+      onclick="location.reload()" 
+      class="bg-gray-700 hover:bg-purple-600 text-white px-4 py-2 rounded-xl font-semibold shadow transition"
+      style="margin-top: 1rem; margin-left: 1rem;"
+    >🏠 Home</button>
+  </div>
+    <h1 class="main-heading">
+  🎨 Free Image Compressor Online - Compress & Resize Photos
+</h1>
+
+    <div class="flex justify-center gap-4 mb-6">
+      <button id="easyTab" class="bg-purple-600 px-5 py-2 rounded-xl font-semibold shadow">🟢 Easy Mode</button>
+      <button id="advancedTab" class="bg-gray-700 px-5 py-2 rounded-xl font-semibold shadow">⚙️ Advanced Mode</button>
+    </div>
+
+    <div id="dropZone" class="drop-zone mb-6">
+      📂 Drag & Drop Image(s) Here or <label for="fileInput" class="file-btn">📁 Choose File(s)</label>
+      <input type="file" id="fileInput" accept="image/*" multiple>
+    </div>
+    <div class="flex justify-center mb-4">
+    <button 
+        id="addMoreBtn"
+        class="bg-gray-700 hover:bg-purple-600 text-white px-4 py-2 rounded-xl font-semibold shadow transition"
+        type="button"
+    >➕ Add More Files</button>
+    </div>
+
+    <p id="fileNameDisplay" class="text-center text-sm text-purple-300 mb-4 hidden">📄 Selected File: <span id="fileName"></span></p>
+    <div id="bulkList" class="bulk-list"></div>
+
+    <!-- Easy Mode -->
+    <div id="easyMode" class="block text-center space-y-4">
+      <label>🎚️ Quality: <span id="easyQualityVal">70%</span></label>
+      <input type="range" id="easyQuality" min="1" max="100" step="1" value="40" class="w-full max-w-xs mx-auto">
+      <div>
+        <label>💾 Max File Size (KB):</label>
+        <input type="number" id="easyMaxSizeKB" placeholder="e.g. 200" class="w-full max-w-xs mx-auto p-2 rounded-lg bg-gray-700 text-white">
+      </div>
+      <p class="filter-instruction">Click the buttons below to preview and apply filters to your image.</p>
+      <div class="filter-container">
+        <button class="filter-btn" data-filter="none">None</button>
+        <button class="filter-btn" data-filter="grayscale">Grayscale</button>
+        <button class="filter-btn" data-filter="sepia">Sepia</button>
+        <button class="filter-btn" data-filter="invert">Invert</button>
+        <button class="filter-btn" data-filter="blur">Blur</button>
+        <button class="filter-btn" data-filter="vintage">Vintage</button>
+      </div>
+      <div class="preview-container">
+        <div>
+          <div class="preview-label">🖼️ Original</div>
+          <div id="easyOriginalPreview"></div>
+        </div>
+        <div>
+          <div class="preview-label">🧠 Compressed</div>
+          <div id="easyCompressedPreview"></div>
+        </div>
+      </div>
+      <div id="easyEstimate" class="text-sm text-gray-300 hidden"></div>
+      <div id="easyAiMessage" class="text-sm font-semibold text-purple-400 hidden"></div>
+      <button id="easyDownload" class="hidden fancy-btn px-6 py-3 rounded-xl font-semibold">⬇️ Download</button>
+    </div>
+
+    <!-- Advanced Mode -->
+    <div id="advancedMode" class="hidden space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label>📏 Width (px)</label>
+          <input type="number" id="imgWidth" class="w-full p-2 rounded-lg bg-gray-700 text-white">
+        </div>
+        <div>
+          <label>📐 Height (px)</label>
+          <input type="number" id="imgHeight" class="w-full p-2 rounded-lg bg-gray-700 text-white">
+        </div>
+        <div>
+          <label>🎚️ Quality: <span id="qualityValue">70%</span></label>
+          <input type="range" id="qualityRange" min="1" max="100" step="1" value="40" class="w-full">
+        </div>
+      </div>
+      <div>
+        <label>📁 Format:</label>
+        <select id="formatSelect" class="w-full p-2 rounded-lg bg-gray-700 text-white">
+          <option value="image/jpeg">JPEG (.jpg)</option>
+          <option value="image/png">PNG (.png)</option>
+          <option value="image/webp">WebP (.webp)</option>
+          <option value="image/bmp">BMP (.bmp)</option>
+          <option value="image/avif">AVIF (.avif)</option>
+        </select>
+      </div>
+      <div>
+        <label>💾 Max File Size (KB):</label>
+        <input type="number" id="maxSizeKB" placeholder="e.g. 200" class="w-full p-2 rounded-lg bg-gray-700 text-white">
+      </div>
+      <div class="flex justify-center gap-4 my-2">
+        <button id="toggleFilters" class="bg-purple-600 px-4 py-2 rounded-xl font-semibold shadow">Filters</button>
+        <button id="toggleManual" class="bg-gray-700 px-4 py-2 rounded-xl font-semibold shadow">Manual Edit</button>
+      </div>
+      <div id="filtersPanel">
+        <p class="filter-instruction">Click the buttons below to preview and apply filters to your image.</p>
+        <div class="filter-container" id="advancedFilterContainer">
+          <button class="filter-btn" data-filter="none">None</button>
+          <button class="filter-btn" data-filter="grayscale">Grayscale</button>
+          <button class="filter-btn" data-filter="sepia">Sepia</button>
+          <button class="filter-btn" data-filter="invert">Invert</button>
+          <button class="filter-btn" data-filter="blur">Blur</button>
+          <button class="filter-btn" data-filter="vintage">Vintage</button>
+        </div>
+        <div class="filter-slider-container" id="filterSliderContainer" style="display:none;">
+          <span class="filter-slider-label" id="filterSliderLabel"></span>
+          <input type="range" id="filterSlider" min="0" max="100" value="50" class="w-64">
+          <span class="filter-slider-value" id="filterSliderValue"></span>
+        </div>
+      </div>
+      <div id="manualPanel" style="display:none;">
+        <p class="filter-instruction">Adjust the sliders below for manual editing.</p>
+        <div class="space-y-2 max-w-md mx-auto">
+          <label>Brightness: <span id="brightnessVal">100</span>%</label>
+          <input type="range" id="brightnessSlider" min="0" max="200" value="100" class="w-full">
+          <label>Contrast: <span id="contrastVal">100</span>%</label>
+          <input type="range" id="contrastSlider" min="0" max="200" value="100" class="w-full">
+          <label>Grayscale: <span id="grayscaleVal">0</span>%</label>
+          <input type="range" id="grayscaleSlider" min="0" max="100" value="0" class="w-full">
+          <label>Saturation: <span id="saturationVal">100</span>%</label>
+          <input type="range" id="saturationSlider" min="0" max="200" value="100" class="w-full">
+          <label>Exposure: <span id="exposureVal">0</span></label>
+          <input type="range" id="exposureSlider" min="-100" max="100" value="0" class="w-full">
+          <label>Sharpen: <span id="sharpenVal">0</span>%</label>
+          <input type="range" id="sharpenSlider" min="0" max="100" value="0" class="w-full">
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:8px;">
+            <button id="resetManualBtn" class="px-4 py-2 rounded-xl" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Reset</button>
+            <button id="autoEnhanceBtn" class="px-4 py-2 rounded-xl fancy-btn">Auto Enhance</button>
+          </div>
+        </div>
+      </div>
+      <div id="estimate" class="text-sm text-gray-300 hidden"></div>
+      <div id="aiMessage" class="text-sm font-semibold text-purple-400 hidden"></div>
+      <div class="preview-container">
+        <div style="grid-column:1/-1;margin-bottom:8px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
+            <div id="uploadedGallery" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"></div>
+            <div id="exifInfo" style="min-width:220px;max-width:360px;background:rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:#e9d5ff;font-size:13px;">No image selected</div>
+          </div>
+        </div>
+        <div>
+          <div class="preview-label">🖼️ Original</div>
+          <div id="originalPreview"></div>
+        </div>
+        <div>
+          <div class="preview-label">🧠 Compressed</div>
+          <div id="compressedPreview"></div>
+        </div>
+      </div>
+      <button id="downloadBtn" class="hidden fancy-btn px-6 py-3 rounded-xl font-semibold">⬇️ Download</button>
+    </div>
+    <canvas id="canvas" class="hidden"></canvas>
+
+    <!-- Blog & Information Section -->
+    <div class="blog-section" style="margin-top: 3rem; padding: 2rem; background: rgba(124, 58, 237, 0.05); border-radius: 1rem; border-left: 4px solid #7c3aed;">
+      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #e9d5ff;">📚 Free Image Compressor Online - Complete Guide</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        
+        <!-- Blog Card 1 -->
+        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(124, 58, 237, 0.2);">
+          <h3 style="color: #a78bfa; margin-bottom: 1rem;">🎯 Image Compressor Online - Everything You Need</h3>
+          <p style="color: #d1d5db; line-height: 1.6;">Our free <strong>image compressor online</strong> tool is the ultimate solution for reducing file sizes efficiently. Need to compress JPG, PNG, WebP, or BMP formats? We support all major image types as a <strong>jpg image compressor online</strong>, <strong>png image compressor online</strong>, <strong>webp image compressor online</strong>, and more. Ranked as the <strong>best image compressor online</strong>, our tool combines simplicity with powerful compression technology for users of all levels.</p>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(124, 58, 237, 0.2);">
+          <h3 style="color: #a78bfa; margin-bottom: 1rem;">📊 Bulk Image Processing - Save Time on Multiple Files</h3>
+          <p style="color: #d1d5db; line-height: 1.6;">Need to compress many images at once? Our <strong>bulk image compressor online</strong> and <strong>batch image compressor online</strong> handle multiple files simultaneously, saving valuable time. Process multiple images with our <strong>image compressor online free</strong> batch tools or use the <strong>mass image compressor online</strong> for large projects. Perfect whether you're a professional or casual user handling multiple photos at once.</p>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(124, 58, 237, 0.2);">
+          <h3 style="color: #a78bfa; margin-bottom: 1rem;">⚡ Smart AI-Powered Compression Technology</h3>
+          <p style="color: #d1d5db; line-height: 1.6;">Experience intelligent compression with our <strong>ai image compressor online</strong> technology that automatically optimizes your images. Unlike basic compression tools, our <strong>ai image compressor online for free</strong> maintains exceptional image quality while achieving significant file size reduction. Comparable to premium solutions like <strong>adobe image compressor online</strong>, yet completely free and accessible directly in your browser.</p>
+        </div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">📊 Compress to Specific File Sizes</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; color: #d1d5db;">
+          <p><strong>Ultra-Compact (Below 100KB):</strong> Compress images to 100kb or less with precision. Our tool can compress to 20kb, making it perfect for <strong>image compressor online below 100kb</strong> requirements, web optimization, and email attachments. Get <strong>image compressor online free less than 100kb</strong> results without quality loss.</p>
+          <p><strong>Small Size (20-50KB):</strong> Perfect for social media and web thumbnails. Achieve compression to 50kb or compress to 20kb with our <strong>image compressor online below 50kb</strong> tool. This size range is ideal for <strong>photo compressor online below 50 kb</strong> applications, offering excellent balance between quality and file size.</p>
+          <p><strong>Medium Size (50-200KB):</strong> Ideal for general web use and email. Compress your images to stay below 200kb with our <strong>image compressor online below 200kb</strong> feature or compress to specific sizes in this range. Get excellent compression for typical web usage with <strong>image compressor online less than 200kb</strong> capability.</p>
+          <p><strong>Large Files (500KB - 5MB):</strong> Handle bigger images with ease. Compress to 500kb, 1mb, 2mb, 5mb, or other larger sizes with our <strong>image compressor online 500kb</strong> and <strong>image compressor online to 1mb</strong> options for professional quality preservation.</p>
+        </div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">📐 Resize & Customize Dimensions</h3>
+        <p style="color: #d1d5db; line-height: 1.6; margin-bottom: 1rem;">Our image compressor comes with <strong>compress image online custom size</strong> capabilities. Adjust your <strong>image compressor online with height and width</strong> settings to precise dimensions, or specify <strong>image compressor online in cm</strong> measurements. Whether you need to <strong>compress image dimensions online</strong> for specific platforms or resize to match exact specifications, our <strong>online image compressor with dimensions</strong> feature provides complete control.</p>
+        <p style="color: #d1d5db; line-height: 1.6;">Set <strong>image compressor online to specific size</strong> requirements with our advanced controls. Get exactly what you need, whether it's <strong>online image compressor to 20kb width and height jpg</strong> or any other precise configuration. Perfect for professionals requiring <strong>image compressor to 20kb with dimensions online</strong> customization.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">✨ Maintain Quality While Compressing</h3>
+        <p style="color: #d1d5db; line-height: 1.6; margin-bottom: 1rem;">Our commitment is delivering <strong>image compressor online without losing quality</strong> results. Get <strong>high quality image compressor online</strong> output with advanced algorithms that preserve detail. We provide <strong>compress image online without losing quality free</strong> technology, ensuring you won't settle for the <strong>extreme image compressor online</strong> options that sacrifice clarity. Your images stay sharp and vibrant.</p>
+        <p style="color: #d1d5db; line-height: 1.6;">Frequently asked: <strong>is it safe to use online image compressor</strong>? Yes! With our <strong>safe image compressor online</strong> technology, your files are processed securely and never stored on our servers. <strong>Use an online image compressor</strong> with complete confidence and peace of mind.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">🎨 Support for All Image Formats</h3>
+        <p style="color: #d1d5db; line-height: 1.6; margin-bottom: 1rem;">Compress any image format with ease: <strong>jpg image compressor online free</strong>, <strong>jpeg image compressor online free</strong>, <strong>png image compressor online free</strong>, <strong>webp image compressor online free</strong>, <strong>bmp image compressor online</strong>, <strong>tiff image compressor online</strong>, <strong>gif image compressor online</strong>, HEIC, and more. Our <strong>online image compressor and converter</strong> handles format conversions seamlessly, functioning as both compressor and converter in one.</p>
+        <p style="color: #d1d5db; line-height: 1.6;">Unique features include <strong>online image to pdf converter and compressor</strong> capabilities, <strong>online image compressor and size reducer</strong> functionality, and <strong>online image compressor and resizer</strong> all-in-one solution. Perfect for <strong>image compressor online for website</strong> optimization, reducing file sizes for <strong>image compressor for email</strong> attachments, or use as a general <strong>photo compressor app online</strong>.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">💼 Specialized Uses & Applications</h3>
+        <p style="color: #d1d5db; line-height: 1.6; margin-bottom: 1rem;">Handle specific requirements with our specialized tools: <strong>photo compressor online for tnpsc</strong> exams, <strong>photo compressor online for pan card</strong> applications, and <strong>tnpsc photo compressor online 50 kb</strong> for official documents. Our <strong>online image compressor for discord</strong> ensures perfect sizing for social platforms, while <strong>image compressor online for website</strong> optimization significantly improves page load times and SEO rankings.</p>
+        <p style="color: #d1d5db; line-height: 1.6;">When comparing alternatives, consider tools like <strong>aiseesoft image compressor online</strong>, <strong>anymp4 image compressor online</strong>, <strong>caesium image compressor online</strong>, <strong>panda image compressor online</strong>, and <strong>optimizilla image compressor online</strong>. Our platform offers comparable or superior functionality, including features of <strong>free online image optimizer and compressor</strong> services, but with the advantage of being completely free and requiring no downloads or installation.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">📱 Works Everywhere - No Downloads Needed</h3>
+        <p style="color: #d1d5db; line-height: 1.6; margin-bottom: 1rem;">Access our <strong>compress image online free</strong> tool from any device. Whether you prefer desktop or mobile, our responsive design ensures smooth operation. Unlike downloadable software, our web-based approach means you get the benefits of an <strong>easy image compressor</strong> without installation hassles. Simply open your browser and start compressing immediately - it's that simple!</p>
+        <p style="color: #d1d5db; line-height: 1.6;">Our platform serves as a reliable <strong>online image compressor software free download</strong> alternative. Why download complicated software when you can have instant access to a powerful <strong>image compressor online free download</strong> alternative? Our web-based solution is faster, easier, and doesn't clutter your system with unnecessary files.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 0.75rem; margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">🔧 Compare With Popular Alternatives</h3>
+        <p style="color: #d1d5db; line-height: 1.6; margin-bottom: 1rem;">Many users search for tools like <strong>compress image online ezgif</strong>, <strong>compress image online ilovepdf</strong>, <strong>compress image online img2go</strong>, <strong>compress image online sejda</strong>, and <strong>image compressor online 11zon</strong>. We offer similar functionality to <strong>ilovepdf image compressor online</strong> and <strong>smallpdf image compressor online</strong>, while remaining completely free and accessible directly in your browser without account creation.</p>
+        <p style="color: #d1d5db; line-height: 1.6;">For specific compression targets, explore our powerful options: <strong>compress image to 500kb best image compressor online</strong>, <strong>compress image to 1mb best image compressor online</strong>, <strong>compress image to 2mb best image compressor online</strong>. Use <strong>compress image online to specific size</strong> for precise control, or leverage our <strong>best free image compressor online</strong> features for general use.</p>
+      </div>
+
+      <div style="background: rgba(124, 58, 237, 0.1); padding: 2rem; border-radius: 0.75rem; border-left: 4px solid #a78bfa;">
+        <h3 style="color: #c084fc; margin-bottom: 1rem; font-size: 1.3rem;">❓ Why Choose Our Image Compressor?</h3>
+        <ul style="color: #d1d5db; line-height: 1.8; padding-left: 1.5rem;">
+          <li>✅ <strong>100% Free</strong> - No hidden costs, premium upgrades, or paid features</li>
+          <li>✅ <strong>No Registration Required</strong> - Start compressing images instantly without creating an account</li>
+          <li>✅ <strong>High Quality Output</strong> - Intelligent algorithms preserve image clarity and detail</li>
+          <li>✅ <strong>Bulk Processing</strong> - Compress hundreds of images at once with batch processing</li>
+          <li>✅ <strong>All Major Formats</strong> - JPG, PNG, WebP, BMP, TIFF, GIF, HEIC, and more</li>
+          <li>✅ <strong>Custom Sizing Control</strong> - Adjust dimensions, quality, and file size precisely</li>
+          <li>✅ <strong>Complete Security</strong> - Files are processed locally in your browser, never uploaded to servers</li>
+          <li>✅ <strong>Fast & Instant Processing</strong> - Compress even large files in seconds with zero waiting</li>
+        </ul>
+      </div>
+
+      <p style="text-align: center; color: #a78bfa; margin-top: 2rem; font-size: 0.9rem;">
+        <em>Our <strong>image compressor online</strong> is trusted by thousands for all image compression needs. Whether you need the <strong>best free image compressor online</strong>, solutions recommended on <strong>best image compressor online reddit</strong>, or a reliable <strong>online image compressor</strong> for daily use, we deliver professional-grade compression results completely free. Start compressing your images today!</em>
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+const addMoreBtn = document.getElementById("addMoreBtn");
+const easyTab = document.getElementById("easyTab");
+const advancedTab = document.getElementById("advancedTab");
+const easyMode = document.getElementById("easyMode");
+const advancedMode = document.getElementById("advancedMode");
+const fileNameDisplay = document.getElementById("fileNameDisplay");
+const fileNameText = document.getElementById("fileName");
+const dropZone = document.getElementById("dropZone");
+const fileInput = document.getElementById("fileInput");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const widthInput = document.getElementById("imgWidth");
+const heightInput = document.getElementById("imgHeight");
+const qualityRange = document.getElementById("qualityRange");
+const qualityValue = document.getElementById("qualityValue");
+const formatSelect = document.getElementById("formatSelect");
+const maxSizeInput = document.getElementById("maxSizeKB");
+const originalPreview = document.getElementById("originalPreview");
+const compressedPreview = document.getElementById("compressedPreview");
+const estimate = document.getElementById("estimate");
+const aiMessage = document.getElementById("aiMessage");
+const downloadBtn = document.getElementById("downloadBtn");
+const easyOriginalPreview = document.getElementById("easyOriginalPreview");
+const easyCompressedPreview = document.getElementById("easyCompressedPreview");
+const easyEstimate = document.getElementById("easyEstimate");
+const easyAiMessage = document.getElementById("easyAiMessage");
+const easyDownload = document.getElementById("easyDownload");
+const easyQuality = document.getElementById("easyQuality");
+const easyQualityVal = document.getElementById("easyQualityVal");
+const easyMaxSizeKB = document.getElementById("easyMaxSizeKB");
+const filterSliderContainer = document.getElementById("filterSliderContainer");
+const filterSlider = document.getElementById("filterSlider");
+const filterSliderLabel = document.getElementById("filterSliderLabel");
+const filterSliderValue = document.getElementById("filterSliderValue");
+const toggleFilters = document.getElementById("toggleFilters");
+const toggleManual = document.getElementById("toggleManual");
+const filtersPanel = document.getElementById("filtersPanel");
+const manualPanel = document.getElementById("manualPanel");
+const brightnessSlider = document.getElementById("brightnessSlider");
+const contrastSlider = document.getElementById("contrastSlider");
+const grayscaleSlider = document.getElementById("grayscaleSlider");
+const brightnessVal = document.getElementById("brightnessVal");
+const contrastVal = document.getElementById("contrastVal");
+const grayscaleVal = document.getElementById("grayscaleVal");
+const bulkList = document.getElementById("bulkList");
+
+let originalFile, originalImage;
+let isProcessing = false;
+let currentFilter = 'none';
+let filterButtons;
+let advancedFilterButtons;
+let currentFilterStrength = 50;
+let manualMode = false;
+let manualSettings = { brightness: 100, contrast: 100, grayscale: 0 };
+let bulkFiles = [];
+let activeFileIndex = 0;
+
+const filterSliderConfigs = {
+  grayscale: { label: "Grayscale", min: 0, max: 100, value: 100, unit: "%" },
+  sepia:    { label: "Sepia", min: 0, max: 100, value: 100, unit: "%" },
+  invert:   { label: "Invert", min: 0, max: 100, value: 100, unit: "%" },
+  blur:     { label: "Blur", min: 0, max: 20, value: 5, unit: "px" },
+  vintage:  { label: "Vintage", min: 0, max: 100, value: 50, unit: "%" }
+};
+
+addMoreBtn.onclick = () => {
+  fileInput.value = ""; // allow re-selecting same files
+  fileInput.click();
+};
+
+easyTab.onclick = () => {
+  easyMode.classList.remove("hidden");
+  advancedMode.classList.add("hidden");
+  easyTab.classList.replace("bg-gray-7", "bg-purple-600");
+  advancedTab.classList.replace("bg-purple-600", "bg-gray-700");
+  updateDownloadButtons();
+};
+advancedTab.onclick = () => {
+  advancedMode.classList.remove("hidden");
+  easyMode.classList.add("hidden");
+  advancedTab.classList.replace("bg-gray-700", "bg-purple-600");
+  easyTab.classList.replace("bg-purple-600", "bg-gray-700");
+  updateDownloadButtons();
+};
+
+dropZone.addEventListener("dragover", e => {
+  e.preventDefault(); 
+  dropZone.classList.add("dragover");
+});
+dropZone.addEventListener("dragleave", () => {
+  dropZone.classList.remove("dragover");
+});
+dropZone.addEventListener("drop", e => {
+  e.preventDefault(); 
+  dropZone.classList.remove("dragover");
+  handleFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener("change", () => handleFiles(fileInput.files));
+
+function handleFiles(files) {
+  bulkFiles = Array.from(files);
+  if (bulkFiles.length === 0) return;
+  if (bulkFiles.length === 1) {
+    handleFile(bulkFiles[0]);
+    bulkList.innerHTML = "";
+  } else {
+    bulkList.innerHTML = "Bulk files: " + bulkFiles.map(f => f.name).join(", ");
+    activeFileIndex = 0;
+    handleFile(bulkFiles[0]);
+  }
+  setTimeout(updateDownloadButtons, 300);
+}
+
+function handleFiles(files) {
+  const newFiles = Array.from(files);
+  // Only add files that are not already in bulkFiles (by name)
+  newFiles.forEach(f => {
+    if (!bulkFiles.some(existing => existing.name === f.name && existing.size === f.size)) {
+      bulkFiles.push(f);
+    }
+  });
+  if (bulkFiles.length === 0) return;
+  if (bulkFiles.length === 1) {
+    handleFile(bulkFiles[0]);
+    bulkList.innerHTML = "";
+  } else {
+    activeFileIndex = 0;
+    handleFile(bulkFiles[bulkFiles.length - 1]);
+    renderBulkList();
+  }
+  setTimeout(updateDownloadButtons, 300);
+}
+
+function handleFile(file) {
+  if (!file) return;
+  originalFile = file;
+  fileNameDisplay.classList.remove("hidden");
+  fileNameText.textContent = file.name;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      originalImage = img;
+      widthInput.value = img.width;
+      heightInput.value = img.height;
+      originalPreview.innerHTML = `<img src="${e.target.result}">`;
+      easyOriginalPreview.innerHTML = `<img src="${e.target.result}">`;
+      compressNow();
+      compressEasy();
+      try { showExifForFile(file); } catch(e){}
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  filterButtons = document.querySelectorAll('.filter-container:not(#advancedFilterContainer) .filter-btn');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      if (originalImage) compressEasy();
+    });
+  });
+  advancedFilterButtons = document.querySelectorAll('#advancedFilterContainer .filter-btn');
+  advancedFilterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      advancedFilterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      if (currentFilter !== 'none') {
+        const cfg = filterSliderConfigs[currentFilter] || {label: "Strength", min: 0, max: 100, value: 50, unit: ""};
+        filterSliderContainer.style.display = "";
+        filterSliderLabel.textContent = cfg.label;
+        filterSlider.min = cfg.min;
+        filterSlider.max = cfg.max;
+        filterSlider.value = cfg.value;
+        filterSliderValue.textContent = cfg.value + cfg.unit;
+        currentFilterStrength = cfg.value;
+      } else {
+        filterSliderContainer.style.display = "none";
+      }
+      if (originalImage && !manualMode) compressNow();
+    });
+  });
+  filterSlider.addEventListener('input', () => {
+    currentFilterStrength = filterSlider.value;
+    const cfg = filterSliderConfigs[currentFilter] || {unit:""};
+    filterSliderValue.textContent = filterSlider.value + cfg.unit;
+    if (originalImage && !manualMode) compressNow();
+  });
+  [brightnessSlider, contrastSlider, grayscaleSlider].forEach(slider => {
+    slider.addEventListener("input", () => {
+      manualSettings.brightness = parseInt(brightnessSlider.value);
+      manualSettings.contrast = parseInt(contrastSlider.value);
+      manualSettings.grayscale = parseInt(grayscaleSlider.value);
+      brightnessVal.textContent = manualSettings.brightness;
+      contrastVal.textContent = manualSettings.contrast;
+      grayscaleVal.textContent = manualSettings.grayscale;
+      if (originalImage && manualMode) compressNow();
+    });
+  });
+
+  // New manual controls: saturation, exposure, sharpen, reset, auto-enhance
+  const saturationSlider = document.getElementById('saturationSlider');
+  const exposureSlider = document.getElementById('exposureSlider');
+  const sharpenSlider = document.getElementById('sharpenSlider');
+  const saturationVal = document.getElementById('saturationVal');
+  const exposureVal = document.getElementById('exposureVal');
+  const sharpenVal = document.getElementById('sharpenVal');
+  const resetManualBtn = document.getElementById('resetManualBtn');
+  const autoEnhanceBtn = document.getElementById('autoEnhanceBtn');
+
+  if(saturationSlider) {
+    saturationSlider.addEventListener('input', ()=>{
+      manualSettings.saturation = parseInt(saturationSlider.value);
+      saturationVal.textContent = manualSettings.saturation;
+      if (originalImage && manualMode) compressNow();
+    });
+  }
+  if(exposureSlider) {
+    exposureSlider.addEventListener('input', ()=>{
+      manualSettings.exposure = parseInt(exposureSlider.value);
+      exposureVal.textContent = manualSettings.exposure;
+      if (originalImage && manualMode) compressNow();
+    });
+  }
+  if(sharpenSlider) {
+    sharpenSlider.addEventListener('input', ()=>{
+      manualSettings.sharpen = parseInt(sharpenSlider.value);
+      sharpenVal.textContent = manualSettings.sharpen;
+      if (originalImage && manualMode) compressNow();
+    });
+  }
+  if(resetManualBtn) {
+    resetManualBtn.addEventListener('click', ()=>{
+      // Reset to defaults
+      manualSettings = { brightness:100, contrast:100, grayscale:0, saturation:100, exposure:0, sharpen:0 };
+      brightnessSlider.value = manualSettings.brightness; contrastSlider.value = manualSettings.contrast; grayscaleSlider.value = manualSettings.grayscale;
+      if(saturationSlider) saturationSlider.value = manualSettings.saturation;
+      if(exposureSlider) exposureSlider.value = manualSettings.exposure;
+      if(sharpenSlider) sharpenSlider.value = manualSettings.sharpen;
+      brightnessVal.textContent = manualSettings.brightness; contrastVal.textContent = manualSettings.contrast; grayscaleVal.textContent = manualSettings.grayscale;
+      if(saturationVal) saturationVal.textContent = manualSettings.saturation;
+      if(exposureVal) exposureVal.textContent = manualSettings.exposure;
+      if(sharpenVal) sharpenVal.textContent = manualSettings.sharpen;
+      if (originalImage && manualMode) compressNow();
+    });
+  }
+  if(autoEnhanceBtn) {
+    autoEnhanceBtn.addEventListener('click', ()=>{
+      // Simple auto-enhance: slight boost to contrast, saturation and exposure
+      manualSettings.contrast = Math.min(180, manualSettings.contrast + 10);
+      manualSettings.saturation = Math.min(160, (manualSettings.saturation||100) + 10);
+      manualSettings.exposure = Math.min(20, (manualSettings.exposure||0) + 6);
+      // push to sliders if exist
+      if(contrastSlider) contrastSlider.value = manualSettings.contrast;
+      if(saturationSlider) saturationSlider.value = manualSettings.saturation;
+      if(exposureSlider) exposureSlider.value = manualSettings.exposure;
+      contrastVal.textContent = manualSettings.contrast;
+      if(saturationVal) saturationVal.textContent = manualSettings.saturation;
+      if(exposureVal) exposureVal.textContent = manualSettings.exposure;
+      if (originalImage && manualMode) compressNow();
+      showToast('Auto Enhance applied');
+    });
+  }
+  toggleFilters.onclick = () => {
+    manualMode = false;
+    filtersPanel.style.display = "";
+    manualPanel.style.display = "none";
+    toggleFilters.classList.replace("bg-gray-700", "bg-purple-600");
+    toggleManual.classList.replace("bg-purple-600", "bg-gray-700");
+    if (originalImage) compressNow();
+  };
+  toggleManual.onclick = () => {
+    manualMode = true;
+    filtersPanel.style.display = "none";
+    manualPanel.style.display = "";
+    toggleManual.classList.replace("bg-gray-700", "bg-purple-600");
+    toggleFilters.classList.replace("bg-purple-600", "bg-gray-700");
+    if (originalImage) compressNow();
+  };
+});
+
+// Set default quality display to 40%
+easyQualityVal.textContent = "40%";
+qualityValue.textContent = "40%";
+
+// --- UI Loader helpers (non-blocking, purely presentational) ---
+const loadingOverlay = document.getElementById('loadingOverlay');
+const progressBar = document.getElementById('progressBar');
+const loadingMsg = document.getElementById('loadingMsg');
+let loadingInterval = null;
+
+function showLoadingOverlay(message = 'Compressing images...', startPct = 4) {
+  if (!loadingOverlay) return;
+  loadingMsg.textContent = message;
+  loadingOverlay.classList.remove('hidden');
+  loadingOverlay.setAttribute('aria-hidden', 'false');
+  progressBar.style.width = startPct + '%';
+  clearInterval(loadingInterval);
+  // Simulate organic progress so UI feels alive (won't affect actual processing)
+  loadingInterval = setInterval(() => {
+    const cur = parseFloat(progressBar.style.width) || 0;
+    // slow down as it gets larger
+    const inc = Math.max(0.3, (1.5 - cur / 100) * (Math.random() * 2));
+    const next = Math.min(98, cur + inc);
+    progressBar.style.width = next + '%';
+  }, 250);
+}
+
+function hideLoadingOverlay(finalMsg = 'Done') {
+  if (!loadingOverlay) return;
+  clearInterval(loadingInterval);
+  progressBar.style.width = '100%';
+  loadingMsg.textContent = finalMsg;
+  setTimeout(() => {
+    loadingOverlay.classList.add('hidden');
+    loadingOverlay.setAttribute('aria-hidden', 'true');
+    progressBar.style.width = '0%';
+    loadingMsg.textContent = 'Compressing images...';
+  }, 600);
+}
+
+// --- EXIF / watermark helpers ---
+async function extractAPP1(arrayBuffer) {
+  try {
+    const bytes = new Uint8Array(arrayBuffer);
+    // Must start with SOI (0xFFD8)
+    if (bytes[0] !== 0xFF || bytes[1] !== 0xD8) return null;
+    let offset = 2;
+    while (offset < bytes.length) {
+      if (bytes[offset] !== 0xFF) { offset++; continue; }
+      const marker = bytes[offset+1];
+      // SOS (start of scan) => stop parsing segments
+      if (marker === 0xDA) break;
+      const len = (bytes[offset+2] << 8) | bytes[offset+3];
+      // APP1 marker = 0xE1
+      if (marker === 0xE1) {
+        // return full APP1 segment (0xFF 0xE1 ..length)
+        const segStart = offset;
+        const segEnd = offset + 2 + len; // len includes length bytes
+        return bytes.slice(segStart, segEnd);
+      }
+      offset += 2 + len;
+    }
+  } catch(e) { return null; }
+  return null;
+}
+
+async function insertAPP1IntoJPEG(jpegBlob, app1Segment) {
+  if (!app1Segment) return jpegBlob;
+  try {
+    const destBuf = await jpegBlob.arrayBuffer();
+    const destBytes = new Uint8Array(destBuf);
+    // ensure dest starts with SOI
+    if (destBytes[0] !== 0xFF || destBytes[1] !== 0xD8) return jpegBlob;
+    // create new bytes: SOI (first 2 bytes) + app1Segment + rest(after SOI)
+    const out = new Uint8Array(2 + app1Segment.length + (destBytes.length - 2));
+    out.set(destBytes.slice(0,2), 0);
+    out.set(app1Segment, 2);
+    out.set(destBytes.slice(2), 2 + app1Segment.length);
+    return new Blob([out], { type: 'image/jpeg' });
+  } catch(e) { return jpegBlob; }
+}
+
+function drawWatermarkOnCanvas(targetCanvas, wm) {
+  if (!wm || !wm.enabled) return;
+  try {
+    const c = targetCanvas;
+    const rctx = c.getContext('2d');
+    const txt = wm.text || '';
+    if (!txt) return;
+    const opacity = (typeof wm.opacity === 'number') ? wm.opacity : 0.4;
+    const sz = wm.size || 24;
+    const pos = wm.position || 'bottom-right';
+    rctx.save();
+    rctx.globalAlpha = opacity;
+    rctx.fillStyle = 'white';
+    rctx.textAlign = 'right';
+    rctx.textBaseline = 'bottom';
+    rctx.font = `${sz}px sans-serif`;
+    const padding = Math.max(8, Math.floor(c.width * 0.02));
+    let x = c.width - padding;
+    let y = c.height - padding;
+    if (pos === 'bottom-left') { rctx.textAlign = 'left'; x = padding; }
+    if (pos === 'top-right') { rctx.textBaseline = 'top'; }
+    if (pos === 'top-left') { rctx.textAlign = 'left'; rctx.textBaseline = 'top'; x = padding; y = padding; }
+    if (pos === 'center') { rctx.textAlign = 'center'; rctx.textBaseline = 'middle'; x = c.width/2; y = c.height/2; }
+    rctx.fillText(txt, x, y);
+    rctx.restore();
+  } catch(e) { /* ignore watermark drawing errors */ }
+}
+
+async function canvasToBlobWithExtras(srcCanvas, format, quality, options = {}) {
+  // returns a Promise<Blob>
+  const tmp = document.createElement('canvas');
+  tmp.width = srcCanvas.width;
+  tmp.height = srcCanvas.height;
+  const tctx = tmp.getContext('2d');
+  tctx.drawImage(srcCanvas, 0, 0);
+  // optionally draw watermark onto the cloned canvas (don't mutate original)
+  if (options.watermark && options.watermark.enabled) {
+    drawWatermarkOnCanvas(tmp, options.watermark);
+  }
+  return new Promise(async (resolve) => {
+    tmp.toBlob(async (blob) => {
+      if (!blob) return resolve(null);
+      // preserve EXIF when requested for JPEGs
+      if (format === 'image/jpeg' && options.preserveExif && options.originalFile) {
+        try {
+          const arr = await options.originalFile.arrayBuffer();
+          const app1 = await extractAPP1(arr);
+          if (app1) {
+            const final = await insertAPP1IntoJPEG(blob, app1);
+            return resolve(final);
+          }
+        } catch(e) {
+          // fallback to blob if extraction/insertion fails
+          return resolve(blob);
+        }
+      }
+      return resolve(blob);
+    }, format, quality);
+  });
+}
+
+function applyFilter(imageData, filter, strength) {
+  if (!filter || filter === "none") return imageData;
+  const data = imageData.data;
+  switch(filter) {
+    case 'grayscale': {
+      const s = (typeof strength === "undefined") ? 100 : parseInt(strength,10);
+      for (let i = 0; i < data.length; i += 4) {
+        const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        data[i] = data[i] + (avg - data[i]) * (s/100);
+        data[i+1] = data[i+1] + (avg - data[i+1]) * (s/100);
+        data[i+2] = data[i+2] + (avg - data[i+2]) * (s/100);
+      }
+      break;
+    }
+    case 'sepia': {
+      const s = (typeof strength === "undefined") ? 100 : parseInt(strength,10);
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i+1], b = data[i+2];
+        const tr = Math.min(255, (r * 0.393) + (g * 0.769) + (b * 0.189));
+        const tg = Math.min(255, (r * 0.349) + (g * 0.686) + (b * 0.168));
+        const tb = Math.min(255, (r * 0.272) + (g * 0.534) + (b * 0.131));
+        data[i]   = r + (tr - r) * (s/100);
+        data[i+1] = g + (tg - g) * (s/100);
+        data[i+2] = b + (tb - b) * (s/100);
+      }
+      break;
+    }
+    case 'invert': {
+      const s = (typeof strength === "undefined") ? 100 : parseInt(strength,10);
+      for (let i = 0; i < data.length; i += 4) {
+        data[i]   = data[i]   + ((255 - data[i])   - data[i])   * (s/100);
+        data[i+1] = data[i+1] + ((255 - data[i+1]) - data[i+1]) * (s/100);
+        data[i+2] = data[i+2] + ((255 - data[i+2]) - data[i+2]) * (s/100);
+      }
+      break;
+    }
+    case 'blur': {
+      const blurAmount = (typeof strength === "undefined") ? 5 : parseInt(strength,10);
+      const tempCanvas = document.createElement('canvas');
+      const tempCtx = tempCanvas.getContext('2d');
+      tempCanvas.width = imageData.width;
+      tempCanvas.height = imageData.height;
+      tempCtx.putImageData(imageData, 0, 0);
+      tempCtx.filter = `blur(${blurAmount}px)`;
+      tempCtx.drawImage(tempCanvas, 0, 0);
+      return tempCtx.getImageData(0, 0, imageData.width, imageData.height);
+    }
+    case 'vintage': {
+      const s = (typeof strength === "undefined") ? 50 : parseInt(strength,10);
+      for (let i = 0; i < data.length; i += 4) {
+        data[i]   = data[i]   * (1 - 0.1 * (s/100));
+        data[i+1] = data[i+1] * (1 - 0.2 * (s/100));
+        data[i+2] = data[i+2] * (1 - 0.5 * (s/100));
+        data[i+3] = data[i+3] * (1 - 0.1 * (s/100));
+      }
+      break;
+    }
+    default:
+      break;
+  }
+  return imageData;
+}
+function applyManualControls(imageData, settings) {
+  const data = imageData.data;
+  const b = settings.brightness / 100;
+  const c = (259 * (settings.contrast + 255)) / (255 * (259 - settings.contrast));
+  const g = settings.grayscale / 100;
+  const s = (settings.saturation !== undefined) ? settings.saturation / 100 : 1;
+  const exposure = (settings.exposure !== undefined) ? settings.exposure : 0; // -100..100
+  const sharpenAmt = (settings.sharpen !== undefined) ? (settings.sharpen / 100) : 0;
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = Math.min(255, data[i] * b);
+    data[i+1] = Math.min(255, data[i+1] * b);
+    data[i+2] = Math.min(255, data[i+2] * b);
+    data[i] = Math.min(255, Math.max(0, c * (data[i] - 128) + 128));
+    data[i+1] = Math.min(255, Math.max(0, c * (data[i+1] - 128) + 128));
+    data[i+2] = Math.min(255, Math.max(0, c * (data[i+2] - 128) + 128));
+    if (g > 0) {
+      const avg = (data[i] + data[i+1] + data[i+2]) / 3;
+      data[i] = data[i] + (avg - data[i]) * g;
+      data[i+1] = data[i+1] + (avg - data[i+1]) * g;
+      data[i+2] = data[i+2] + (avg - data[i+2]) * g;
+    }
+    // exposure: simple multiplier centered at 0
+    if (exposure !== 0) {
+      const factor = 1 + (exposure / 100);
+      data[i] = Math.min(255, Math.max(0, data[i] * factor));
+      data[i+1] = Math.min(255, Math.max(0, data[i+1] * factor));
+      data[i+2] = Math.min(255, Math.max(0, data[i+2] * factor));
+    }
+    // saturation: interpolate between luminance and original
+    if (s !== 1) {
+      const lum = 0.2126 * data[i] + 0.7152 * data[i+1] + 0.0722 * data[i+2];
+      data[i] = Math.min(255, Math.max(0, lum + (data[i] - lum) * s));
+      data[i+1] = Math.min(255, Math.max(0, lum + (data[i+1] - lum) * s));
+      data[i+2] = Math.min(255, Math.max(0, lum + (data[i+2] - lum) * s));
+    }
+  }
+
+  // Simple sharpen pass: unsharp-like (non-destructive, small kernel)
+  if (sharpenAmt > 0) {
+    try {
+      const w = imageData.width, h = imageData.height;
+      const copy = new Uint8ClampedArray(data); // snapshot
+      for (let y = 1; y < h-1; y++) {
+        for (let x = 1; x < w-1; x++) {
+          const idx = (y * w + x) * 4;
+          // average of 4-neighbors
+          const idxL = (y * w + (x-1)) * 4;
+          const idxR = (y * w + (x+1)) * 4;
+          const idxU = ((y-1) * w + x) * 4;
+          const idxD = ((y+1) * w + x) * 4;
+          for (let ch=0; ch<3; ch++) {
+            const center = copy[idx+ch];
+            const avgNeighbors = (copy[idxL+ch] + copy[idxR+ch] + copy[idxU+ch] + copy[idxD+ch]) / 4;
+            const diff = center - avgNeighbors;
+            data[idx+ch] = Math.min(255, Math.max(0, center + diff * sharpenAmt));
+          }
+        }
+      }
+    } catch(e) { /* fail silently on memory/edge cases */ }
+  }
+  return imageData;
+}
+
+[easyQuality, easyMaxSizeKB, qualityRange, widthInput, heightInput, formatSelect, maxSizeInput].forEach(el => {
+  el.addEventListener("input", () => {
+    if (isProcessing) return;
+    easyQualityVal.textContent = easyQuality.value + "%";
+    qualityValue.textContent = qualityRange.value + "%";
+    if (originalImage) {
+      if (el === easyQuality || el === easyMaxSizeKB) compressEasy();
+      else compressNow();
+    }
+  });
+});
+
+function compressEasy() {
+  if (!originalImage) return;
+  isProcessing = true;
+  showLoadingOverlay('Compressing preview...');
+  canvas.width = originalImage.width;
+  canvas.height = originalImage.height;
+  ctx.drawImage(originalImage, 0, 0);
+  if (currentFilter !== 'none') {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const filteredData = applyFilter(imageData, currentFilter, 100);
+    ctx.putImageData(filteredData, 0, 0);
+  }
+  const quality = parseInt(easyQuality.value) / 100;
+  const maxSizeKB = parseInt(document.getElementById('easyMaxSizeKB').value);
+  (async () => {
+    let finalBlob = null;
+    let finalSizeKB = 0;
+    let currentQuality = quality;
+    const maxAttempts = 6;
+    let attempts = 0;
+    // try to produce blob and, if requested, meet max size by reducing quality (best-effort)
+    while (attempts < maxAttempts) {
+      const blob = await canvasToBlobWithExtras(canvas, 'image/jpeg', currentQuality, { watermark: window.watermarkSettings, preserveExif: !!window.preserveExif, originalFile });
+      if (!blob) break;
+      finalBlob = blob;
+      finalSizeKB = finalBlob.size / 1024;
+      if (!maxSizeKB || finalSizeKB <= maxSizeKB) break;
+      // reduce quality and retry
+      currentQuality = Math.max(0.05, currentQuality - 0.12);
+      attempts++;
+    }
+    if (!finalBlob) { isProcessing = false; hideLoadingOverlay('Preview failed'); return; }
+    const finalUrl = URL.createObjectURL(finalBlob);
+    const originalKB = (originalFile.size / 1024).toFixed(2);
+    const compressedKB = (finalBlob.size / 1024).toFixed(2);
+    const ratio = ((finalBlob.size / originalFile.size) * 100).toFixed(1);
+    easyEstimate.classList.remove("hidden");
+    easyAiMessage.classList.remove("hidden");
+    easyEstimate.innerHTML = `📦 Original: <b>${originalKB} KB</b><br>📉 Compressed: <b>${compressedKB} KB</b><br>📊 Ratio: ${ratio}%`;
+    easyAiMessage.textContent =
+      currentQuality < 0.3 ? "😬 Too blurry!" :
+      currentQuality < 0.7 ? "👌 Balanced!" :
+      "🖼️ High Quality!";
+    easyCompressedPreview.innerHTML = `<img src="${finalUrl}" />`;
+    easyDownload.classList.remove("hidden");
+    updateDownloadButtons();
+    isProcessing = false;
+    hideLoadingOverlay('Preview ready');
+  })();
+}
+
+function compressNow() {
+  if (!originalImage) return;
+  isProcessing = true;
+  showLoadingOverlay('Compressing image...');
+  const width = parseInt(widthInput.value) || originalImage.width;
+  const height = parseInt(heightInput.value) || originalImage.height;
+  const quality = parseInt(qualityRange.value) / 100;
+  const format = formatSelect.value;
+  const maxSizeKB = parseInt(maxSizeInput.value);
+  canvas.width = width;
+  canvas.height = height;
+  ctx.drawImage(originalImage, 0, 0, width, height);
+  if (manualMode) {
+    let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    imageData = applyManualControls(imageData, manualSettings);
+    ctx.putImageData(imageData, 0, 0);
+  } else if (currentFilter !== 'none') {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const filteredData = applyFilter(imageData, currentFilter, currentFilterStrength);
+    ctx.putImageData(filteredData, 0, 0);
+  }
+  (async () => {
+    let finalBlob = null;
+    let finalSizeKB = 0;
+    let currentQuality = quality;
+    const maxAttempts = 6;
+    let attempts = 0;
+    // try to produce blob and, if requested, meet max size by reducing quality (best-effort)
+    while (attempts < maxAttempts) {
+      const blob = await canvasToBlobWithExtras(canvas, format, currentQuality, { watermark: window.watermarkSettings, preserveExif: !!window.preserveExif, originalFile });
+      if (!blob) break;
+      finalBlob = blob;
+      finalSizeKB = finalBlob.size / 1024;
+      if (!maxSizeKB || finalSizeKB <= maxSizeKB) break;
+      // reduce quality and retry
+      currentQuality = Math.max(0.05, currentQuality - 0.12);
+      attempts++;
+    }
+    if (!finalBlob) { isProcessing = false; hideLoadingOverlay('Failed'); return; }
+    const finalUrl = URL.createObjectURL(finalBlob);
+    const originalKB = (originalFile.size / 1024).toFixed(2);
+    const compressedKB = (finalBlob.size / 1024).toFixed(2);
+    const ratio = ((finalBlob.size / originalFile.size) * 100).toFixed(1);
+    estimate.classList.remove("hidden");
+    aiMessage.classList.remove("hidden");
+    estimate.innerHTML = `📦 Original: <b>${originalKB} KB</b><br>📉 Compressed: <b>${compressedKB} KB</b><br>📊 Ratio: ${ratio}%`;
+    aiMessage.textContent =
+      currentQuality < 0.3 ? "😬 Too blurry!" :
+      currentQuality < 0.7 ? "👌 Balanced!" :
+      "🖼️ High Quality!";
+    compressedPreview.innerHTML = `<img src="${finalUrl}" />`;
+    downloadBtn.classList.remove("hidden");
+    updateDownloadButtons();
+    isProcessing = false;
+    hideLoadingOverlay('Ready');
+  })();
+}
+
+// --- BULK DOWNLOAD LOGIC ---
+function updateDownloadButtons() {
+  // Easy Mode
+  if (bulkFiles.length > 1) {
+    easyDownload.textContent = "⬇️ Bulk Download";
+    easyDownload.onclick = () => bulkDownload('easy');
+  } else {
+    easyDownload.textContent = "⬇️ Download";
+    easyDownload.onclick = () => {
+      const img = easyCompressedPreview.querySelector('img');
+      if (!img) return;
+      const link = document.createElement("a");
+      link.href = img.src;
+      link.download = `easy-compressed-${currentFilter}.jpg`;
+      link.click();
+    };
+  }
+  // Advanced Mode
+  if (bulkFiles.length > 1) {
+    downloadBtn.textContent = "⬇️ Bulk Download";
+    downloadBtn.onclick = () => bulkDownload('advanced');
+  } else {
+    downloadBtn.textContent = "⬇️ Download";
+    downloadBtn.onclick = () => {
+      const img = compressedPreview.querySelector('img');
+      if (!img) return;
+      const link = document.createElement("a");
+      link.href = img.src;
+      link.download = `compressed-${currentFilter}.${(formatSelect.value||'image/jpeg').split('/')[1].replace('jpeg','jpg')}`;
+      link.click();
+    };
+  }
+}
+
+function bulkDownload(mode) {
+  if (bulkFiles.length < 2) return;
+  showLoadingOverlay('Processing bulk images...');
+  const zip = new JSZip();
+  const easyMaxSize = mode === 'easy' ? parseInt(easyMaxSizeKB.value) : 0;
+  const advMaxSize = mode === 'advanced' ? parseInt(maxSizeInput.value) : 0;
+  function processFile(i) {
+    if (i >= bulkFiles.length) {
+      zip.generateAsync({type:"blob"}).then(function(content) {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(content);
+        a.download = "compressed-images.zip";
+        a.click();
+        hideLoadingOverlay('Download ready');
+      });
+      return;
+    }
+    const file = bulkFiles[i];
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        let w = img.width, h = img.height, q = 0.7, format = "image/jpeg", maxSize = 0;
+        if (mode === 'advanced') {
+          w = parseInt(widthInput.value) || img.width;
+          h = parseInt(heightInput.value) || img.height;
+          q = parseInt(qualityRange.value) / 100;
+          format = formatSelect.value;
+          maxSize = advMaxSize;
+        } else {
+          q = parseInt(easyQuality.value) / 100;
+          maxSize = easyMaxSize;
+        }
+        canvas.width = w; canvas.height = h;
+        ctx.drawImage(img, 0, 0, w, h);
+        if (mode === 'advanced') {
+          if (manualMode) {
+            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            imageData = applyManualControls(imageData, manualSettings);
+            ctx.putImageData(imageData, 0, 0);
+          } else if (currentFilter !== 'none') {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const filteredData = applyFilter(imageData, currentFilter, currentFilterStrength);
+            ctx.putImageData(filteredData, 0, 0);
+          }
+        } else {
+          if (currentFilter !== 'none') {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const filteredData = applyFilter(imageData, currentFilter, 100);
+            ctx.putImageData(filteredData, 0, 0);
+          }
+        }
+        (async () => {
+          let finalBlob = null;
+          let currentQuality = q;
+          const maxAttempts = 6;
+          let attempts = 0;
+          // Apply max size retry logic for both modes
+          while (attempts < maxAttempts) {
+            const blob = await canvasToBlobWithExtras(canvas, format, currentQuality, { watermark: window.watermarkSettings, preserveExif: !!window.preserveExif, originalFile: file });
+            if (!blob) break;
+            finalBlob = blob;
+            const finalSizeKB = blob.size / 1024;
+            if (!maxSize || finalSizeKB <= maxSize) break;
+            // reduce quality and retry
+            currentQuality = Math.max(0.05, currentQuality - 0.12);
+            attempts++;
+          }
+          if (finalBlob) zip.file(file.name.replace(/\.[^.]+$/, "." + (format === 'image/jpeg' ? 'jpg' : format.split('/')[1])), finalBlob);
+          // update visual progress
+          const pct = Math.round(((i+1) / bulkFiles.length) * 98);
+          if (progressBar) progressBar.style.width = pct + '%';
+          processFile(i+1);
+        })();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+  processFile(0);
+}
+
+function renderBulkList() {
+  if (bulkFiles.length <= 1) {
+    bulkList.innerHTML = "";
+    return;
+  }
+  bulkList.innerHTML = bulkFiles.map((f, idx) => {
+    const url = URL.createObjectURL(f);
+    return `<span style="display:inline-block;position:relative;margin:0 8px 8px 0;">
+      <img src="${url}" style="width:60px;height:60px;object-fit:cover;border-radius:8px;border:2px solid #a78bfa;box-shadow:0 2px 8px #0002;vertical-align:middle;">
+      <button onclick="deleteBulkFile(${idx})" style="position:absolute;top:-8px;right:-8px;background:#f472b6;border:none;border-radius:50%;width:22px;height:22px;color:#fff;font-weight:bold;cursor:pointer;box-shadow:0 1px 4px #0003;">✖</button>
+      <div style='font-size:11px;color:#a78bfa;text-align:center;max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;'>${f.name}</div>
+    </span>`;
+  }).join("");
+}
+
+// --- Uploaded gallery + EXIF display ---
+function renderUploadedGallery() {
+  const wrap = document.getElementById('uploadedGallery');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  bulkFiles.forEach((f, idx) => {
+    const url = URL.createObjectURL(f);
+    const btn = document.createElement('button');
+    btn.className = 'uploaded-thumb';
+    btn.title = f.name;
+    btn.style.cssText = 'border:2px solid transparent;border-radius:8px;padding:0;background:transparent;cursor:pointer;';
+    btn.innerHTML = `<img src="${url}" style="width:64px;height:64px;object-fit:cover;border-radius:6px;display:block">`;
+    btn.addEventListener('click', () => selectUploadedImage(idx));
+    if (idx === activeFileIndex) btn.style.borderColor = '#f472b6';
+    wrap.appendChild(btn);
+  });
+}
+
+function selectUploadedImage(idx) {
+  if (!bulkFiles[idx]) return;
+  activeFileIndex = idx;
+  const file = bulkFiles[idx];
+  // reuse existing handleFile flow to set previews
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      originalFile = file;
+      originalImage = img;
+      widthInput.value = img.width;
+      heightInput.value = img.height;
+      originalPreview.innerHTML = `<img src="${e.target.result}">`;
+      easyOriginalPreview.innerHTML = `<img src="${e.target.result}">`;
+      compressNow();
+      compressEasy();
+      renderUploadedGallery();
+      showExifForFile(file);
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+async function showExifForFile(file) {
+  const out = document.getElementById('exifInfo');
+  if (!out) return;
+  try {
+    const ab = await file.arrayBuffer();
+    const ex = await parseEXIFFromArrayBuffer(ab);
+    if (!ex || Object.keys(ex).length === 0) {
+      out.innerHTML = '<b>No EXIF found</b>';
+      return;
+    }
+    const parts = [];
+    if (ex.Make || ex.Model) parts.push(`<b>Camera:</b> ${ex.Make||''} ${ex.Model||''}`);
+    if (ex.DateTime) parts.push(`<b>Date:</b> ${ex.DateTime}`);
+    if (ex.Orientation) parts.push(`<b>Orientation:</b> ${ex.Orientation}`);
+    if (ex.ImageWidth && ex.ImageHeight) parts.push(`<b>Resolution:</b> ${ex.ImageWidth}×${ex.ImageHeight}`);
+    if (ex.ExposureTime) parts.push(`<b>Exposure:</b> ${ex.ExposureTime}`);
+    if (ex.FNumber) parts.push(`<b>F-stop:</b> ${ex.FNumber}`);
+    if (ex.ISOSpeedRatings) parts.push(`<b>ISO:</b> ${ex.ISOSpeedRatings}`);
+    if (ex.GPSLatitude && ex.GPSLongitude) {
+      parts.push(`<b>GPS:</b> ${ex.GPSLatitude.toFixed(6)}, ${ex.GPSLongitude.toFixed(6)}`);
+      parts.push(`<a href="https://www.google.com/maps/search/?api=1&query=${ex.GPSLatitude},${ex.GPSLongitude}" target="_blank" rel="noopener" style="color:#ffd7fb">Open in Maps</a>`);
+    }
+    out.innerHTML = parts.join('<br>');
+  } catch(e) { out.innerHTML = '<b>EXIF read error</b>'; }
+}
+
+// Minimal EXIF parser for common tags (returns plain object)
+function parseEXIFFromArrayBuffer(buffer) {
+  try {
+    const data = new DataView(buffer);
+    let ptr = 0;
+    // find 'Exif\0\0'
+    let exifHeaderOffset = -1;
+    for (let i = 0; i < data.byteLength - 6; i++) {
+      if (data.getUint8(i) === 0x45 && data.getUint8(i+1) === 0x78 && data.getUint8(i+2) === 0x69 && data.getUint8(i+3) === 0x66 && data.getUint8(i+4) === 0x00 && data.getUint8(i+5) === 0x00) { exifHeaderOffset = i; break; }
+    }
+    if (exifHeaderOffset < 0) return {};
+    const tiffOffset = exifHeaderOffset + 6;
+    // Determine endianness
+    const byteOrder = String.fromCharCode(data.getUint8(tiffOffset)) + String.fromCharCode(data.getUint8(tiffOffset+1));
+    const little = (byteOrder === 'II');
+    const readUint16 = (off) => little ? data.getUint16(off, true) : data.getUint16(off, false);
+    const readUint32 = (off) => little ? data.getUint32(off, true) : data.getUint32(off, false);
+    const readString = (off, len) => {
+      let s = ''; for (let i = 0; i < len; i++) { const ch = data.getUint8(off + i); if (ch === 0) break; s += String.fromCharCode(ch); } return s;
+    };
+    const tags = {};
+    const firstIFDOffset = readUint32(tiffOffset + 4) + tiffOffset;
+    function readIFD(ifdOffset) {
+      const entries = readUint16(ifdOffset);
+      let base = ifdOffset + 2;
+      for (let i = 0; i < entries; i++) {
+        const tag = readUint16(base + i*12);
+        const type = readUint16(base + i*12 + 2);
+        const count = readUint32(base + i*12 + 4);
+        const valueOffset = readUint32(base + i*12 + 8);
+        let value;
+        // type 2 = ASCII
+        if (type === 2) {
+          const strOff = (count > 4) ? (tiffOffset + valueOffset) : (base + i*12 + 8);
+          value = readString(strOff, count);
+        } else if (type === 3) { // SHORT
+          if (count === 1) value = readUint16((count > 1 && valueOffset > 0) ? (tiffOffset + valueOffset) : (base + i*12 + 8));
+        } else if (type === 4) { // LONG
+          value = readUint32((count === 1) ? (base + i*12 + 8) : (tiffOffset + valueOffset));
+        } else if (type === 5) { // RATIONAL
+          const off = tiffOffset + valueOffset;
+          const num = readUint32(off);
+          const den = readUint32(off+4);
+          value = num / den;
+        }
+        tags[tag] = tags[tag] || value;
+      }
+      const nextIFD = readUint32(base + entries*12);
+      return nextIFD ? (tiffOffset + nextIFD) : 0;
+    }
+    // Read 0th IFD
+    const next = readIFD(firstIFDOffset);
+    // Helpful tag mapping
+    const tagMap = {
+      0x010F: 'Make', 0x0110: 'Model', 0x0132: 'DateTime', 0x0112: 'Orientation', 0x0100: 'ImageWidth', 0x0101: 'ImageHeight',
+      0x8769: 'ExifOffset', 0x8825: 'GPSInfoIFDPointer'
+    };
+    const out = {};
+    for (const t in tagMap) { const id = parseInt(t); if (tags[id]) out[tagMap[t]] = tags[id]; }
+    // parse Exif IFD if present
+    if (tags[0x8769]) {
+      const exifIfd = tiffOffset + tags[0x8769];
+      // read entries
+      const entries = readUint16(exifIfd);
+      let base = exifIfd + 2;
+      for (let i = 0; i < entries; i++) {
+        const tag = readUint16(base + i*12);
+        const type = readUint16(base + i*12 + 2);
+        const count = readUint32(base + i*12 + 4);
+        const valueOffset = readUint32(base + i*12 + 8);
+        if (tag === 0x829A) { // ExposureTime
+          const off = tiffOffset + valueOffset; const num = readUint32(off); const den = readUint32(off+4); out.ExposureTime = `${num}/${den}s`; }
+        if (tag === 0x829D) { const off = tiffOffset + valueOffset; const num = readUint32(off); const den = readUint32(off+4); out.FNumber = `f/${(num/den).toFixed(1)}`; }
+        if (tag === 0x8827) { out.ISOSpeedRatings = readUint16(tiffOffset + valueOffset); }
+      }
+    }
+    // parse GPS IFD
+    if (tags[0x8825]) {
+      const gpsIfd = tiffOffset + tags[0x8825];
+      const entries = readUint16(gpsIfd);
+      let base = gpsIfd + 2;
+      let lat, lon, latRef, lonRef;
+      for (let i = 0; i < entries; i++) {
+        const tag = readUint16(base + i*12);
+        const type = readUint16(base + i*12 + 2);
+        const count = readUint32(base + i*12 + 4);
+        const valueOffset = readUint32(base + i*12 + 8);
+        if (tag === 1) latRef = String.fromCharCode(data.getUint8(tiffOffset + valueOffset));
+        if (tag === 3) lonRef = String.fromCharCode(data.getUint8(tiffOffset + valueOffset));
+        if (tag === 2) {
+          const off = tiffOffset + valueOffset;
+          const d0 = readUint32(off); const d1 = readUint32(off+4); const d2 = readUint32(off+8);
+          const r0 = d0 / readUint32(off+4-4); // fallback (not ideal)
+          // safer: read as rationals
+          const degNum = readUint32(off); const degDen = readUint32(off+4);
+          const minNum = readUint32(off+8); const minDen = readUint32(off+12);
+          const secNum = readUint32(off+16); const secDen = readUint32(off+20);
+          const deg = degNum / degDen; const min = minNum / minDen; const sec = secNum / secDen;
+          lat = deg + (min / 60) + (sec / 3600);
+        }
+        if (tag === 4) {
+          const off = tiffOffset + valueOffset;
+          const degNum = readUint32(off); const degDen = readUint32(off+4);
+          const minNum = readUint32(off+8); const minDen = readUint32(off+12);
+          const secNum = readUint32(off+16); const secDen = readUint32(off+20);
+          const deg = degNum / degDen; const min = minNum / minDen; const sec = secNum / secDen;
+          lon = deg + (min / 60) + (sec / 3600);
+        }
+      }
+      if (lat && lon) {
+        if (latRef && latRef.toUpperCase() === 'S') lat = -lat;
+        if (lonRef && lonRef.toUpperCase() === 'W') lon = -lon;
+        out.GPSLatitude = lat; out.GPSLongitude = lon;
+      }
+    }
+    return out;
+  } catch(e) { return {}; }
+}
+
+function deleteBulkFile(idx) {
+  // Remove file and update previews
+  const wasCurrent = (bulkFiles[idx] === originalFile);
+  bulkFiles.splice(idx, 1);
+  if (bulkFiles.length === 0) {
+    originalFile = null;
+    originalImage = null;
+    fileNameDisplay.classList.add("hidden");
+    originalPreview.innerHTML = "";
+    compressedPreview.innerHTML = "";
+    easyOriginalPreview.innerHTML = "";
+    easyCompressedPreview.innerHTML = "";
+    easyEstimate.classList.add("hidden");
+    easyAiMessage.classList.add("hidden");
+    estimate.classList.add("hidden");
+    aiMessage.classList.add("hidden");
+    easyDownload.classList.add("hidden");
+    downloadBtn.classList.add("hidden");
+  } else {
+    // If deleted file was current, show next or previous
+    let nextIdx = idx;
+    if (nextIdx >= bulkFiles.length) nextIdx = bulkFiles.length - 1;
+    handleFile(bulkFiles[nextIdx]);
+  }
+  renderBulkList();
+  updateDownloadButtons();
+}
+
+// Patch handleFiles to call renderBulkList
+function handleFiles(files) {
+  const newFiles = Array.from(files);
+  newFiles.forEach(f => {
+    if (!bulkFiles.some(existing => existing.name === f.name && existing.size === f.size)) {
+      bulkFiles.push(f);
+    }
+  });
+  if (bulkFiles.length === 0) return;
+  if (bulkFiles.length === 1) {
+    handleFile(bulkFiles[0]);
+    bulkList.innerHTML = "";
+  } else {
+    activeFileIndex = 0;
+    handleFile(bulkFiles[bulkFiles.length - 1]);
+    renderBulkList();
+  }
+  // Also render the uploaded gallery used in advanced mode for quick selection
+  if (typeof renderUploadedGallery === 'function') renderUploadedGallery();
+  setTimeout(updateDownloadButtons, 300);
+}
+</script>
+<link rel="stylesheet" href="advanced.css">
+<link rel="stylesheet" href="responsive.css">
+<script src="script.js"></script>
+<!-- Add this just before </body> -->
+<!-- Footer with important pages -->
+<footer class="site-footer" role="contentinfo">
+  <div class="max-w-5xl" style="margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;padding:0 1rem;">
+    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+    <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+    <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+    <a href="about.html" class="footer-link">About Us</a>
+    <a href="contact.html" class="footer-link">Contact Us</a>
+  </div>
+</footer>
+<div class="signature-container">
+  <span class="signature-text">&mdash; made with <span class="signature-heart">❤</span> by <span class="signature-highlight">Shivam</span></span>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Dancing+Script&display=swap" rel="stylesheet">
+<style>
+  .signature-text {
+    font-family: 'Pacifico', 'Dancing Script', cursive, sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
+    text-shadow: 2px 2px 8px #00000033;
+    letter-spacing: 2px;
+    user-select: none;
+    display: inline-block;
+    padding-right: 0.5rem;
+  }
+  .signature-highlight {
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+  }
+  .signature-heart {
+    color: #ff4d6d;
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin: 0 0.2em;
+  }
+  @media (max-width: 640px) {
+    .signature-text {
+      font-size: 1.2rem;
+      padding-right: 0.2rem;
+    }
+  }
+</style>
+<!-- End signature -->
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect fill="#7c3aed" width="512" height="512"/>
+  <circle cx="256" cy="256" r="180" fill="white" opacity="0.1"/>
+  <text x="256" y="280" font-size="120" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">🎨</text>
+</svg>

@@ -1,0 +1,88 @@
+# Image Compressor .htaccess Configuration
+# Caching, Compression, and Security Headers
+
+# Set Correct MIME Types
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddType application/json .json
+  AddType application/webmanifest .webmanifest
+  AddType text/plain .txt
+</IfModule>
+
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/x-httpd-php
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Set default expiration to 7 days
+  ExpiresDefault "access plus 7 days"
+  
+  # CSS Files - 1 year
+  ExpiresByType text/css "access plus 1 year"
+  
+  # JavaScript Files - 1 year
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  
+  # Image Files - 1 year
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # Font Files - 1 year
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  
+  # HTML Files - 1 hour (for updates)
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # XML Files - 1 day
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType text/xml "access plus 1 day"
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  # Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Enable XSS protection
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Clickjacking protection
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Remove ETags
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+
+FileETag None
+
+# Rewrite engine - DISABLED to prevent XML files from being rewritten as HTML
+# If needed, uncomment below but be careful with XML/JSON/TXT files
+<IfModule mod_rewrite.c>
+  RewriteEngine Off
+</IfModule>

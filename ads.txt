@@ -1,0 +1,10 @@
+# Ads.txt file for imagecompressor.rf.gd
+# This is a placeholder ads.txt file to prevent ad quality issues
+# Currently not serving ads, but file present for compliance
+
+# If you plan to monetize, add your ad network details here:
+# Format: <Domain>, <Publisher ID>, <Account Type>, <Certificate Authority>
+
+# Example:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+

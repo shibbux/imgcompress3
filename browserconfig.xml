@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square150x150logo src="/mstile-150x150.png"/>
+      <TileColor>#7c3aed</TileColor>
+    </tile>
+    <notification>
+      <polling-uri src="https://imagecompressor.rf.gd/" />
+      <polling-uri2 src="https://imagecompressor.rf.gd/" />
+      <polling-uri3 src="https://imagecompressor.rf.gd/" />
+      <polling-uri4 src="https://imagecompressor.rf.gd/" />
+      <polling-uri5 src="https://imagecompressor.rf.gd/" />
+      <frequency>30</frequency>
+      <cycle>1</cycle>
+    </notification>
+  </msapplication>
+</browserconfig>

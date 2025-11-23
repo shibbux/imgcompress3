@@ -1,0 +1,308 @@
+/* ============================================================================
+   RESPONSIVE.CSS - ULTRA AGGRESSIVE Mobile Override
+   Loaded LAST to maximize cascade priority
+   Uses !important everywhere to override inline styles
+   Desktop (1024px+) remains UNTOUCHED
+   ============================================================================ */
+
+/* ============================================================================
+   KILL PROBLEMATIC INLINE STYLES ON ALL MOBILE (320px - 1023px)
+   ============================================================================ */
+@media (max-width: 1023px) {
+  
+  /* KILL THE 26VW HEIGHT MONSTER - UNIVERSAL OVERRIDE */
+  .drop-zone {
+    height: auto !important;
+    min-height: 120px !important;
+    max-height: none !important;
+    padding: 15px !important;
+  }
+
+  /* Target inline 26vw styles explicitly */
+  [style*="height: 26vw"],
+  [style*="height:26vw"] {
+    height: auto !important;
+  }
+
+  /* FORCE LAYOUT FOR MOBILE - Universal width/overflow fixes */
+  body,
+  html {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main-wrapper {
+    padding: 0.5rem !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+
+  .blackbox {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.75rem !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+
+  .max-w-5xl {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+
+  /* === MAIN HEADING === */
+  .main-heading {
+    font-size: 16px !important;
+    margin-bottom: 0.75rem !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* === TABS === */
+  .flex.justify-center.gap-4.mb-6 {
+    gap: 0.3rem !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .flex.justify-center.gap-4.mb-6 button {
+    flex: 1 !important;
+    min-width: 100px !important;
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* === DROP ZONE - FINAL === */
+  .drop-zone {
+    border: 2px dashed #7c3aed !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .drop-zone label {
+    font-size: 0.75rem !important;
+  }
+
+  /* === FILE BUTTONS === */
+  #addMoreBtn,
+  .file-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .flex.justify-center.mb-4 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* === QUALITY & SLIDERS === */
+  input[type="range"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* === EASY/ADVANCED MODE LABELS === */
+  #easyMode label,
+  #advancedMode label {
+    font-size: 0.8rem !important;
+    display: block !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* === FILTER BUTTONS === */
+  .filter-container {
+    display: flex !important;
+    gap: 0.3rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  .filter-btn {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.65rem !important;
+    min-width: 55px !important;
+  }
+
+  /* === PREVIEW CONTAINER === */
+  .preview-container {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    padding: 0.25rem !important;
+    margin: 0.25rem 0 !important;
+    display: grid !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .preview-label {
+    font-size: 0.7rem !important;
+  }
+
+  /* === IMAGE GALLERY THUMBNAILS === */
+  #uploadedGallery {
+    display: flex !important;
+    gap: 0.25rem !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  #uploadedGallery img {
+    max-width: 60px !important;
+    max-height: 60px !important;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+  }
+
+  /* === BULK LIST === */
+  .bulk-list {
+    max-height: 100px !important;
+    padding: 0.25rem !important;
+    gap: 0.25rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow-y: auto !important;
+    width: 100% !important;
+  }
+
+  .bulk-list img {
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 40px !important;
+  }
+
+  /* === GRIDS === */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    display: grid !important;
+  }
+
+  .grid label {
+    font-size: 0.8rem !important;
+  }
+
+  .grid input,
+  .grid select {
+    width: 100% !important;
+    padding: 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* === TOGGLE BUTTONS === */
+  #toggleFilters,
+  #toggleManual {
+    flex: 1 !important;
+    padding: 0.4rem !important;
+    font-size: 0.7rem !important;
+    min-width: 70px !important;
+  }
+
+  /* === MANUAL PANEL === */
+  .space-y-2.max-w-md.mx-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .space-y-2.max-w-md.mx-auto label {
+    font-size: 0.8rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .space-y-2.max-w-md.mx-auto input[type="range"] {
+    width: 100% !important;
+  }
+
+  /* === UNIVERSAL FLEX CONTAINER FIXES === */
+  [style*="display:flex"],
+  [style*="display: flex"] {
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* === ALL IMAGES - FORCE RESPONSIVE === */
+  img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* === PREVENT HORIZONTAL OVERFLOW === */
+  div, section, article, main {
+    overflow-x: hidden !important;
+  }
+
+  /* === FORCE BOX-SIZING === */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  /* === FOOTER === */
+  .site-footer {
+    padding: 0.75rem 0 !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .site-footer .max-w-5xl {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.3rem !important;
+    justify-content: center !important;
+  }
+
+  .site-footer .footer-link {
+    font-size: 0.65rem !important;
+    padding: 0.3rem 0.5rem !important;
+  }
+
+  /* === SIGNATURE === */
+  .signature-container {
+    margin-top: 0.75rem !important;
+    text-align: center !important;
+  }
+
+  .signature-text {
+    font-size: 0.85rem !important;
+  }
+
+  /* === STATIC PAGES === */
+  .static-page {
+    margin: 0.75rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .static-page h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .static-page p {
+    font-size: 0.8rem !important;
+  }
+
+
+
+/* ============================================================================
+   DESKTOP SAFEGUARD (1024px+) - COMPLETELY UNTOUCHED
+   ============================================================================ */
+@media (min-width: 1024px) {
+  /* Desktop remains unchanged */
+}

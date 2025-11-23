@@ -1,0 +1,25 @@
+# humanstxt.org/
+# The humans behind this website
+
+/* TEAM */
+  Developer: JioAI Cloud
+  Contact: support@jioaicloud.com
+  Website: https://imagecompressor.rf.gd/
+
+/* SITE */
+  Last Update: 2025/11/18
+  Language: English
+  Doctype: HTML5
+  Standards: HTML5, CSS3, JavaScript ES6
+
+/* TOOLS */
+  Frontend: HTML5, CSS3, Vanilla JavaScript
+  Compression: Canvas API, Image Optimization
+  Archive: JSZip for bulk download
+  Styling: Tailwind CSS
+  Testing: Chrome DevTools, Firefox Developer Tools
+
+/* THANKS */
+  Built with open-source libraries and best practices.
+  Special thanks to the web development community.
+
