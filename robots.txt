@@ -1,19 +1,8 @@
-# Image Compressor robots.txt
-# Allow all search engines to crawl the site
-
 User-agent: *
 Allow: /
-Disallow: /temp/
-Disallow: /*.json$
-Disallow: /cache/
 
-# Google Bot Rules
-User-agent: Googlebot
-Allow: /
+# No unnecessary blocks – site 100% open for crawling
+Disallow:
 
-# Bing Bot Rules
-User-agent: Bingbot
-Allow: /
-
-# Sitemap Location
-Sitemap: https://imagecompressoronline.rf.gd/sitemap.xml
+# Correct sitemap for current domain
+Sitemap: https://imagecompressoronline.dpdns.org/sitemap.xml
