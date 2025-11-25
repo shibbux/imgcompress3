@@ -4,6 +4,9 @@
 
 ---
 
+## Website Link
+https://imagecompressoronline.dpdns.org/
+---
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
@@ -863,3 +866,4 @@ This project is developed as part of B.Tech curriculum at Satyug Darshan Institu
 **Last Updated**: November 13, 2025
 
 For more information, contact the faculty guide or visit the project repository.
+
